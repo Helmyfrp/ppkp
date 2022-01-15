@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Perwalian;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::get('/dosenpembimbing', function () {
+    /*
+    * return berupa list mahasiswa yang menjadi bimbingan dosen
+    */
+    // 1234 adalah nidn dosen
+    return Perwalian::where('dosen_nidn', 1234)->with('Mahasiswa')->get();
 });
