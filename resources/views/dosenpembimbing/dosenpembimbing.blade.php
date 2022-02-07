@@ -35,7 +35,7 @@
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 180px;">
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-                + Tambah Data Dosen Pembimbing
+                + Pilih Dosen Pembimbing
               </button>
               <div class="input-group-append">
               </div>
@@ -50,7 +50,7 @@
 
               <!-- Modal Header -->
               <div class="modal-header">
-                <h4 class="modal-title">Tambah Data Dosen Pembimbing</h4>
+                <h4 class="modal-title">Pilih Dosen Pembimbing</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
 
@@ -108,9 +108,6 @@
               <th>Nama Lengkap</th>
               <th>Jenis Kelamin</th>
               <th>Email</th>
-              <th>Detail</th>
-              <th>Ubah</th>
-              <th>Hapus</th>
             </tr>
           </thead>
           <tbody>
@@ -123,21 +120,15 @@
               <td>{{$item->email}}</td>
 
               <td><a href="/dosenpembimbing/{{ $item->nidn }}">
-                  <button id="" type="button" class="btn btn-primary">
-                    Detail
-                  </button>
                 </a>
               </td>
               <td>
-                <a href="/dosenpembimbing/{{$item->nidn}}/edit" button id="" type="button" class="btn btn-warning" data-toggle="modal1" data-target="#myModal1">
-                  Ubah
+                <a href="/dosenpembimbing/{{$item->nidn}}/edit">
                 </a>
               </td>
               <td>
                 <a href="/dosenpembimbing/{{ $item->nidn }}/hapus">
-                  <button button id="" type="button" class="btn btn-danger">
-                    Hapus
-                  </button>
+                  
                 </a>
               </td>
             </tr>

@@ -108,7 +108,7 @@
                     <a href="/mahasiswabimbingan" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
-                            Mahasiswa
+                            Mahasiswa Bimbingan
                         </p>
                     </a>
                 </li>

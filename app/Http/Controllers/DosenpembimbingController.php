@@ -27,7 +27,6 @@ class DosenpembimbingController extends Controller
      */
     public function index()
     {
-
         $dataDosenpembimbing = ModelDosenpembimbing::all();
         return view('dosenpembimbing/dosenpembimbing', ['data' => $dataDosenpembimbing]);
     }
