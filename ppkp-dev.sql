@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2022 at 01:58 PM
+-- Generation Time: Feb 12, 2022 at 02:35 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `ppkp-dev`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bimbingan`
+--
+
+CREATE TABLE `bimbingan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `namalengkap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `namafile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bimbingan`
+--
+
+INSERT INTO `bimbingan` (`id`, `namalengkap`, `namafile`, `created_at`, `updated_at`) VALUES
+(1, 'fwfqwfqwfqwf', 'C:\\xampp\\tmp\\php373.tmp', NULL, NULL),
+(2, 'pppppppppppppppppp', 'C:\\xampp\\tmp\\phpA9A7.tmp', NULL, NULL),
+(3, 'aaaaaaaaaaaa', 'C:\\xampp\\tmp\\phpC2FD.tmp', NULL, NULL),
+(4, 'bbbbbbbbbbb', 'C:\\xampp\\tmp\\phpDD7B.tmp', NULL, NULL),
+(5, 'cccccccccccc', 'C:\\xampp\\tmp\\phpF7EA.tmp', NULL, NULL),
+(6, 'dddddddddddddd', 'C:\\xampp\\tmp\\php1769.tmp', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -50,7 +76,33 @@ INSERT INTO `dosen` (`id`, `nidn`, `name`, `jeniskelamin`, `email`, `email_verif
 (2, 12345, 'lunox', 'perempuan', 'lunox@gmail.com', NULL, '$2y$10$xKb.Yu0e.hVtjDOmaIBmj.qELCc2LeEfiCiq62H7TUC.SzSrVCeSO', 'dosen', NULL, NULL, NULL),
 (3, 12345, 'lesley', 'perempuan', 'lesley@gmail.com', NULL, '$2y$10$O1G2LWKmUcxJFMFQDHp5juPWYZB1Ve9b1H5VOZffL/Rc7dVyhuY.i', 'dosen', NULL, NULL, NULL),
 (4, 12345, 'lunox', 'lakilaki', 'lunox@gmail.com', NULL, '$2y$10$MXXUal1qjsPDuB5rJRMUJOKJmYBseQSQsRg2M6cIAz9lcm6bATyQi', 'dosen', NULL, NULL, NULL),
-(5, 12345, 'lord', 'perempuan', 'lord@gmail.com', NULL, '$2y$10$Y2f9JeLp/aVoaznD7/HjX.jl1n0CWBw0JgzZCXTte0UKFfA57C9aq', 'dosen', NULL, NULL, NULL);
+(5, 12345, 'lord', 'perempuan', 'lord@gmail.com', NULL, '$2y$10$Y2f9JeLp/aVoaznD7/HjX.jl1n0CWBw0JgzZCXTte0UKFfA57C9aq', 'dosen', NULL, NULL, NULL),
+(6, 44123, 'kupa', 'perempuan', 'kupa@gmail.com', NULL, '$2y$10$AJcAQMTITIF9DyB3zvfu0ua2LUlCXt7cYi2XCRaKkguOIKSavlMCm', 'dosen', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `formbimbingan`
+--
+
+CREATE TABLE `formbimbingan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `namalengkap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `namafile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `formbimbingan`
+--
+
+INSERT INTO `formbimbingan` (`id`, `namalengkap`, `namafile`, `created_at`, `updated_at`) VALUES
+(1, 'hahahaha', 'C:\\xampp\\tmp\\php1E96.tmp', NULL, NULL),
+(2, 'fwfqwfqwfqwf', 'C:\\xampp\\tmp\\phpEC71.tmp', NULL, NULL),
+(3, 'dgdfgfddgfgfdgdf', 'C:\\xampp\\tmp\\php92C2.tmp', NULL, NULL),
+(4, 'werwrwe', 'C:\\xampp\\tmp\\phpB639.tmp', NULL, NULL),
+(5, 'dgdfgd', 'C:\\xampp\\tmp\\phpD76E.tmp', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -75,6 +127,20 @@ INSERT INTO `mahasiswa` (`Nim`, `NamaLengkap`, `JenisKelamin`, `status`, `Email`
 (12345, 'Helmy', 'Laki Laki', '', 'helmy@gmail.com', ''),
 (137678, 'hel', 'lakilaki', 'mahasiswa', 'jahjk@gmail.com', '$2y$10$1d7u/2Ko1ZbQPymVw8C/ZOKEgII8zMJFZuoNf5oe7NmJZ/cNk1cb6'),
 (123456, 'zilong', 'perempuan', 'mahasiswa', 'zilong@gmail.com', '$2y$10$dloUj08/3lWVy3JZ1AVHy.NdoPzPNZkW2sq2VBy4s7or/KIq0W7wO');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mahasiswabimbingan`
+--
+
+CREATE TABLE `mahasiswabimbingan` (
+  `id` int(11) NOT NULL,
+  `namalengkap` varchar(100) NOT NULL,
+  `namafile` varchar(100) NOT NULL,
+  `create_at` timestamp NULL DEFAULT NULL,
+  `update_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -106,6 +172,71 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2022_01_09_165914_create_mahasiswabimbingan_table', 11),
 (12, '2022_01_09_170034_create_formbimbingan_table', 12),
 (13, '2022_01_09_170150_create_projectkpdosen_table', 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengajuanproposal`
+--
+
+CREATE TABLE `pengajuanproposal` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `namafile` varchar(100) NOT NULL,
+  `create_at` timestamp NULL DEFAULT NULL,
+  `update_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projectkpdosen`
+--
+
+CREATE TABLE `projectkpdosen` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `namalengkap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `namafile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `projectkpdosen`
+--
+
+INSERT INTO `projectkpdosen` (`id`, `namalengkap`, `namafile`, `created_at`, `updated_at`) VALUES
+(1, 'wkwkwkwkwkwkkw', 'C:\\xampp\\tmp\\php4E1C.tmp', NULL, NULL),
+(2, 'yrtyrr', 'C:\\xampp\\tmp\\php15.tmp', NULL, NULL),
+(3, 'yutyututt', 'C:\\xampp\\tmp\\php1FC3.tmp', NULL, NULL),
+(4, 'asdkmdsamdsa', 'C:\\xampp\\tmp\\php68D3.tmp', NULL, NULL),
+(5, 'trtrtrtrtrtr', 'C:\\xampp\\tmp\\php8D16.tmp', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uploadkp`
+--
+
+CREATE TABLE `uploadkp` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `namalengkap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `namafile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `uploadkp`
+--
+
+INSERT INTO `uploadkp` (`id`, `namalengkap`, `namafile`, `created_at`, `updated_at`) VALUES
+(1, 'wkwkwkwkwk', 'C:\\xampp\\tmp\\php5465.tmp', NULL, NULL),
+(2, 'hahahhahaha', 'C:\\xampp\\tmp\\phpD991.tmp', NULL, NULL),
+(3, 'sdadadadadasdasd', 'C:\\xampp\\tmp\\phpF98D.tmp', NULL, NULL),
+(4, 'fggfgfgfgf', 'C:\\xampp\\tmp\\php18DE.tmp', NULL, NULL),
+(5, 'kookokkokokokokko', 'C:\\xampp\\tmp\\php3AAF.tmp', NULL, NULL),
+(6, 'lalalallallala', 'C:\\xampp\\tmp\\php724B.tmp', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,15 +275,45 @@ INSERT INTO `users` (`id`, `nim`, `name`, `jeniskelamin`, `email`, `email_verifi
 --
 
 --
+-- Indexes for table `bimbingan`
+--
+ALTER TABLE `bimbingan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
+-- Indexes for table `formbimbingan`
+--
+ALTER TABLE `formbimbingan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mahasiswabimbingan`
+--
+ALTER TABLE `mahasiswabimbingan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `projectkpdosen`
+--
+ALTER TABLE `projectkpdosen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `uploadkp`
+--
+ALTER TABLE `uploadkp`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -166,9 +327,21 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bimbingan`
+--
+ALTER TABLE `bimbingan`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `formbimbingan`
+--
+ALTER TABLE `formbimbingan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
@@ -176,6 +349,18 @@ ALTER TABLE `dosen`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `projectkpdosen`
+--
+ALTER TABLE `projectkpdosen`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `uploadkp`
+--
+ALTER TABLE `uploadkp`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
