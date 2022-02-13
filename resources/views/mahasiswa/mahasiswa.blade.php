@@ -117,10 +117,10 @@
             @foreach($data as $item)
             <tr>
               <td>1</td>
-              <td>{{$item->nim}}</td>
-              <td>{{$item->name}}</td>
-              <td>{{$item->jeniskelamin}}</td>
-              <td>{{$item->email}}</td>
+              <td>{{$item->Nim}}</td>
+              <td>{{$item->NamaLengkap}}</td>
+              <td>{{$item->JenisKelamin}}</td>
+              <td>{{$item->Email}}</td>
 
               <td><a href="/mahasiswa/{{ $item->nim }}">
                   <button id="" type="button" class="btn btn-primary">

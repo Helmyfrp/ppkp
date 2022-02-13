@@ -9,5 +9,6 @@ class Mahasiswa extends Model
 {
     use HasFactory;
     protected $table = 'mahasiswa';
-    protected $primaryKey = 'nim';
+    protected $primaryKey = 'Nim';
+    //protected $fillable = ['Nim', 'Nama Lengkap', 'Jenis Kelamin', 'status', 'Email', 'Password'];
 }

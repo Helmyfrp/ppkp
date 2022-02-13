@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ModelMahasiswa;
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -28,31 +28,34 @@ class MahasiswaController extends Controller
     public function index()
     {
 
-        $dataMahasiswa = ModelMahasiswa::all();
+        $dataMahasiswa = Mahasiswa::select('*')
+        ->get();
+        //var_dump($dataMahasiswa);
+        
         return view('mahasiswa/mahasiswa', ['data' => $dataMahasiswa]);
     }
 
 
     public function insert(Request $request)
     {
-
-        $data = ModelMahasiswa::insert([
-            'nim' => $request->nim,
-            'name' => $request->name,
-            'jeniskelamin' => $request->jeniskelamin,
+        
+        $data = Mahasiswa::insert([
+            'Nim' => $request->nim,
+            'NamaLengkap' => $request->name,
+            'JenisKelamin' => $request->jeniskelamin,
             'status' => $request->status,
-            'email' => $request->email,
+            'Email' => $request->email,
             'password' => Hash::make($request->password),
 
         ]);
 
-        $dataMahasiswa = ModelMahasiswa::all();
+        $dataMahasiswa = Mahasiswa::all();
         return redirect()->route('mahasiswa');
     }
 
     public function detail($nim)
     {
-        $data = ModelMahasiswa::select('*')
+        $data = Mahasiswa::select('*')
             ->where('nim', $nim)
             ->get();
         return view('mahasiswa/detail', ['data' => $data]);
@@ -60,7 +63,7 @@ class MahasiswaController extends Controller
 
     public function edit($nim)
     {
-        $data = ModelMahasiswa::select('*')
+        $data = Mahasiswa::select('*')
             ->where('nim', $nim)
             ->get();
         return view('mahasiswa/edit', ['data' => $data]);
@@ -86,7 +89,7 @@ class MahasiswaController extends Controller
                 'status' => $request->input('status')
             ]);
 
-        $dataMahasiswa = ModelMahasiswa::all();
+        $dataMahasiswa = Mahasiswa::all();
         return redirect()->route('mahasiswa');
     }
 }
