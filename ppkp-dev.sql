@@ -12,10 +12,15 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
+<<<<<<< HEAD
+ Date: 20/01/2022 10:41:47
+*/
+=======
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
+>>>>>>> 5501d3057dafed88e2c7893461d8bbedaa7adef2
 
 --
 -- Database: `ppkp-dev`
@@ -67,9 +72,22 @@ CREATE TABLE `dosen` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
+<<<<<<< HEAD
+-- ----------------------------
+-- Table structure for perwalian
+-- ----------------------------
+DROP TABLE IF EXISTS `perwalian`;
+CREATE TABLE `perwalian`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `dosen_nidn` int NULL DEFAULT NULL,
+  `mahasiswa_nim` int NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+=======
 --
 -- Dumping data for table `dosen`
 --
+>>>>>>> 5501d3057dafed88e2c7893461d8bbedaa7adef2
 
 INSERT INTO `dosen` (`id`, `nidn`, `name`, `jeniskelamin`, `email`, `email_verified_at`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 1234, 'Akai', 'lakilaki', 'akai@gmail.com', NULL, '$2y$10$ll2s3D7bLoARtFuuMNo9JeDIK.MTvGnMUTAlnYODVshH8c9rwFdiO', 'dosen', NULL, NULL, NULL),
